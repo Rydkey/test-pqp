@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('movies')->group(function () {
     Route::controller(TmdbController::class)->group(function () {
         Route::get('trending', 'getTrendingMovies');
-        Route::get('detail/{movieId}', 'getMovieDetails');
+        Route::get('details/{movieId}', 'getMovieDetails');
     });
 });
 
