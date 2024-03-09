@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TmdbController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('movies')->group(function () {
+    Route::controller(TmdbController::class)->group(function () {
+        Route::get('trending', 'getTrendingMovies');
+        Route::get('detail/{movieId}', 'getMovieDetails');
+    });
+});
+
