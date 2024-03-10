@@ -3,7 +3,9 @@
         <div class="flex items-center justify-between h-16">
             <div class="flex items-center">
                 <div class="text-white font-semibold text-xl">
-                    Movie Database
+                    <a href="{{Route('home')}}">
+                        Movie Database
+                    </a>
                 </div>
             </div>
             <div>

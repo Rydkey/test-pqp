@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::view('/movie-details/{movieId}', 'movie/movie-details')->name('movie.details');;
 
 Route::middleware([
     'auth:sanctum',
