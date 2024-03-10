@@ -10,10 +10,10 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class MovieGenre
- * 
+ *
  * @property int $movie_id
  * @property int $genre_id
- * 
+ *
  * @property Genre $genre
  * @property Movie $movie
  *
@@ -23,9 +23,14 @@ class MovieGenre extends Model
 {
 	protected $table = 'movie_genre';
 	public $incrementing = false;
-	public $timestamps = false;
+    public $timestamps = false;
 
-	protected $casts = [
+    protected $fillable = [
+        'movie_id',
+        'genre_id'
+    ];
+
+    protected $casts = [
 		'movie_id' => 'int',
 		'genre_id' => 'int'
 	];

@@ -23,6 +23,7 @@ Route::prefix('movies')->group(function () {
     Route::controller(TmdbController::class)->group(function () {
         Route::get('trending/{page?}', 'getTrendingMovies');
         Route::get('details/{movieId}', 'getMovieDetails');
+        Route::get('upsert-in-db/{movieId}', 'upsertMovieInDB');
     });
 });
 
