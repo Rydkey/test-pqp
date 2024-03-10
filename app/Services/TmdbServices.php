@@ -10,10 +10,13 @@ class TmdbServices
 {
     protected $apiKey;
 
+    protected $baseUrl;
+
     public function __construct() {
         $this->apiKey = env('TMDB_API_KEY');
+        $this->baseUrl = 'https://api.themoviedb.org/3/';
     }
-    public function execute(string $url): JsonResponse
+    public function execute(string $path): JsonResponse
     {
         $client = new Client();
         $options = [
@@ -24,7 +27,7 @@ class TmdbServices
         ];
 
         try {
-            $response = $client->get("$url", $options);
+            $response = $client->get("$this->baseUrl$path", $options);
         } catch (GuzzleException $e) {
             return response()->json(['error' => $e->getMessage()], $e->getCode());
         }

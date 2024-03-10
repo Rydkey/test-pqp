@@ -17,7 +17,7 @@ class Trending
 
     public function getAllPaginated(?int $page = 1): JsonResponse
     {
-        $url = "https://api.themoviedb.org/3/trending/movie/day?page=$page&language=fr-FR&api_key=";
+        $url = "trending/movie/day?page=$page&language=fr-FR";
 
         return $this->tmdbServices->execute($url);
     }

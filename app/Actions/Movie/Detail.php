@@ -14,9 +14,9 @@ class Detail
         $this->tmdbServices = $movieService;
     }
 
-    public function execute(string $movieId): JsonResponse
+    public function execute(int $movieId): JsonResponse
     {
-        $url = "https://api.themoviedb.org/3/movie/$movieId?language=fr-FR&api_key=";
+        $url = "movie/$movieId?language=fr-FR";
         return $this->tmdbServices->execute($url);
     }
 }
