@@ -8,9 +8,9 @@ use Illuminate\Http\JsonResponse;
 
 class TmdbController extends Controller
 {
-    public function getTrendingMovies(Trending $trending): JsonResponse
+    public function getTrendingMovies(Trending $trending, ?int $page = 1): JsonResponse
     {
-       return $trending->execute();
+       return $trending->getAllPaginated($page);
     }
 
     public function getMovieDetails(Detail $detail, string $movieId): JsonResponse
