@@ -12,12 +12,12 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Genre
- * 
+ *
  * @property int $id
  * @property string $name
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Collection|Movie[] $movies
  *
  * @package App\Models
@@ -27,6 +27,7 @@ class Genre extends Model
 	protected $table = 'genres';
 
 	protected $fillable = [
+        'tmdb_id',
 		'name'
 	];
 
