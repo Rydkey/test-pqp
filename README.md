@@ -6,17 +6,33 @@ application pour le test technique plus que pro
 
 après avoir cloné le repo, executer les commandes dans l'ordre : 
 
-```composer install```
+```
+composer install
+```
 
-```npm install```
+```
+npm install
+```
 
-```npm run build```
+```
+npm run build
+```
 
-```./vendor/bin/sail up```
+```
+cp .env.example .env
+```
 
-```./vendor/bin/sail artisan migrate```
+```
+./vendor/bin/sail up
+```
 
-```./vendor/bin/sail artisan php artisan app:populate-db-with-trending```
+```
+./vendor/bin/sail artisan migrate
+```
+
+```
+./vendor/bin/sail artisan php artisan app:populate-db-with-trending
+```
 
 ## indications
 
